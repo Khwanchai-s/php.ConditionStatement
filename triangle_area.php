@@ -13,7 +13,7 @@
             <?php
                 $height = $_POST['height'];  // รับค่าความสูงสามเหลี่ยม
                 $width = $_POST['width'];   // รับค่าความยาวฐานจากฟอร์มที่ส่งมา
-                $area = 0.5 * $height * $width;
+                $area = triangleArea($height,$width);    //เรียกใช้การคำนวณจาก function
                 echo "<p>รูปสามเหลี่ยมที่มี <strong>ความสูง</strong> $height และ <strong>ความยาวฐาน</strong> $width</p>";
                 echo "<p><strong>พื้นที่:</strong> $area ตารางหน่วย</p>";
             ?>
@@ -21,6 +21,12 @@
         <div class="actions">
             <a href="triangle_area_form.php" class="btn">กลับไปหน้าแรก</a>
         </div>
+        <?php
+        function triangleArea($h,$w){
+            $a = 0.5 * $h * $w;     //คำนวณพื้นที่ 1/2*ฐ*ส
+            return $a;
+        }
+        ?>
     </div>
 </body>
 </html>
